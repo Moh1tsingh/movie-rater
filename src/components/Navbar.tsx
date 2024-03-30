@@ -11,13 +11,19 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex gap-2">
-          <Button variant={"outline"} className="tracking-tighter">
+          <Button variant={"outline"} className="tracking-tighter ">
             <Link to={"/"}>Home</Link>
           </Button>
-          <Button variant={"outline"} className="tracking-tighter">
+          <Button
+            variant={"outline"}
+            className="tracking-tighter sm:block hidden"
+          >
             <Link to={"/rated"}>Rated</Link>
           </Button>
-          <Button variant={"outline"} className="tracking-tighter">
+          <Button
+            variant={"outline"}
+            className="tracking-tighter sm:block hidden"
+          >
             <Link to={"/auth"}>Login</Link>
           </Button>
         </div>

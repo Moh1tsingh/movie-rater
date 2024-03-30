@@ -26,7 +26,7 @@ const ColumnDisplay = (props: Props) => {
 
   return (
     <div>
-      <div className=" mt-5 grid grid-cols-3 gap-5 ">
+      <div className=" mt-5 sm:grid sm:grid-cols-3 flex justify-center flex-col  gap-5 ">
         {data.map((displayType: DisplayData) => {
           const [rate, setRate] = useState<number[]>();
           const [isRating, setIsRating] = useState<boolean>(true);
@@ -45,7 +45,7 @@ const ColumnDisplay = (props: Props) => {
               >
                 <div
                   key={displayType.id}
-                  className=" bg-white w-[23vw] h-auto outline-1 outline-slate-400 outline rounded-sm flex flex-col overflow-hidden shadow-lg"
+                  className="sm:ml-0 ml-7 bg-white w-10/12 sm:w-[23vw] sm:h-[800px] outline-1 outline-slate-400 outline rounded-sm flex flex-col overflow-hidden shadow-lg"
                 >
                   <img
                     src={`https://image.tmdb.org/t/p/original/${displayType.poster_path}`}
@@ -64,7 +64,7 @@ const ColumnDisplay = (props: Props) => {
                   </div>
                 </div>
               </Link>
-              <div className="flex mt-2 gap-1 ">
+              <div className="flex mt-2 gap-1 sm:block hidden ">
                 {isRating && (
                   <Button
                     onClick={() => setIsRating(false)}
@@ -94,27 +94,27 @@ const ColumnDisplay = (props: Props) => {
                               String(displayType.id),
                               rate?.[0] ?? 0
                             );
-                          } 
-                        //   else {
-                        //     ratedSuccessfully = rateSeries(
-                        //       String(displayType.id),
-                        //       rate?.[0] ?? 0
-                        //     );
-                        //   }
+                          }
+                          //   else {
+                          //     ratedSuccessfully = rateSeries(
+                          //       String(displayType.id),
+                          //       rate?.[0] ?? 0
+                          //     );
+                          //   }
 
                           if (await ratedSuccessfully) {
                             toast({
                               title: "Rating was added successfully!",
                               className: "bg-yellow-300 text-xl font-medium",
                             });
-                          }else{
+                          } else {
                             toast({
                               title: "Something went wrong!",
                               className: "bg-red-300 text-xl font-medium",
                             });
                           }
                         }}
-                        className=" bg-yellow-400 text-black hover:bg-yellow-500"
+                        className=" bg-yellow-400 text-black hover:bg-yellow-500 "
                       >
                         Rate {rate}★
                       </Button>
