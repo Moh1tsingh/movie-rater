@@ -13,7 +13,7 @@ const Rated = () => {
     queryFn: fetchRatedMovies,
   });
   console.log(ratedMovieData);
-  const { data: ratedSeriesData, isLoading: isLoadingSeries } = useQuery({
+  const { isLoading: isLoadingSeries } = useQuery({
     queryKey: ["ratedSeries"],
     queryFn: fetchRatedSeries,
   });

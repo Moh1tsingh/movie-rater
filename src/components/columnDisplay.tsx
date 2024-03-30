@@ -21,7 +21,7 @@ interface Props {
 }
 
 const ColumnDisplay = (props: Props) => {
-  const { data, displayType } = props;
+  const { data } = props;
   const { toast } = useToast();
 
   return (
